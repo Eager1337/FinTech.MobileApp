@@ -1,30 +1,36 @@
-# Fintech mobile application
+# FinTech Mobile App – UI Prototype
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+This is a mobile banking app UI designed for Sierra Leone’s FinTech sector. Built using Figma, this prototype allows users to send money, manage wallets, and track investments.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/ebeaver091-gmailcoms-projects/v0-fintech-mobile-application)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/zUIKpTChtnk)
+## 💡 Features
 
-## Overview
+- Welcome & Onboarding Screens
+- Secure Login/Sign Up
+- User Dashboard
+- Send Money Flow
+- Investment & Tracking
+- Profile Management
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## 📁 Screenshots Included
 
-## Deployment
+- Welcome Screen
+- Secure & Trusted
+- Grow Your Money
+- Sign In / Sign Up
+- User Dashboard
+- Send Money Screens (1–4)
+- User Profile
+- Transfer Screen
+- ⁠Transaction history 
+- ⁠Mobile Top up Screens
 
-Your project is live at:
+## 🔗 Figma Link
 
-**[https://vercel.com/ebeaver091-gmailcoms-projects/v0-fintech-mobile-application](https://vercel.com/ebeaver091-gmailcoms-projects/v0-fintech-mobile-application)**
+👉 https://www.figma.com/proto/nm9YZXECEaxqCryGhwArK3/Figma-basics?page-id=1669%3A162202&node-id=601-9&viewport=148%2C-72%2C0.19&t=Oac2ClagaHT3gGyG-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=601%3A9
 
-## Build your app
+## 👥 Contributors
 
-Continue building your app on:
+- [Alusine G Dumbuya]
+- [Salome Koroma, Sombo Kayaat, Emmanuel Bendu]
 
-**[https://v0.dev/chat/projects/zUIKpTChtnk](https://v0.dev/chat/projects/zUIKpTChtnk)**
-
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## 🎓 For: Limkokwing University – Faculty of ICT
