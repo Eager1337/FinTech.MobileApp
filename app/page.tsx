@@ -1,79 +1,72 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { Button } from "@/components/ui/button"
+import { ArrowRight, Shield, TrendingUp, Zap } from "lucide-react"
 import { useRouter } from "next/navigation"
-import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 
 export default function SplashScreen() {
   const router = useRouter()
-  const [isLoading, setIsLoading] = useState(true)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-      setTimeout(() => {
-        router.push("/onboarding")
-      }, 1000)
-    }, 2000)
+    setMounted(true)
+  }, [])
 
-    return () => clearTimeout(timer)
-  }, [router])
+  if (!mounted) {
+    return null
+  }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 flex items-center justify-center relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-white rounded-full blur-xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-white rounded-full blur-2xl"></div>
-      </div>
-
-      <div className="text-center z-10">
-        <motion.div
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-8"
-        >
-          <div className="w-24 h-24 mx-auto mb-6 bg-white rounded-2xl flex items-center justify-center shadow-2xl">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-              className="text-4xl font-bold text-blue-600"
-            >
-              ₿
-            </motion.div>
+    <div className="min-h-screen bg-gradient-to-br from-green-600 via-emerald-500 to-teal-600 flex items-center justify-center p-4">
+      <div className="max-w-md w-full space-y-8 text-center animate-in fade-in duration-1000">
+        {/* Logo */}
+        <div className="flex justify-center mb-8">
+          <div className="bg-white rounded-full p-6 shadow-2xl animate-in zoom-in duration-500">
+            <Zap className="w-16 h-16 text-green-600" />
           </div>
+        </div>
 
-          <motion.h1
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-4xl font-bold text-white mb-2"
-          >
-            FinTech
-          </motion.h1>
+        {/* App Name */}
+        <div className="space-y-2 animate-in slide-in-from-bottom-4 duration-700">
+          <h1 className="text-5xl font-bold text-white tracking-tight">FinTech</h1>
+          <p className="text-xl text-green-50">Banking Made Simple</p>
+        </div>
 
-          <motion.p
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-white/80 text-lg"
-          >
-            Empowering Sierra Leone, Digitally
-          </motion.p>
-        </motion.div>
+        {/* Features */}
+        <div className="grid grid-cols-3 gap-4 py-8 animate-in slide-in-from-bottom-5 duration-1000">
+          <div className="flex flex-col items-center space-y-2">
+            <Shield className="w-8 h-8 text-white" />
+            <span className="text-sm text-green-50">Secure</span>
+          </div>
+          <div className="flex flex-col items-center space-y-2">
+            <Zap className="w-8 h-8 text-white" />
+            <span className="text-sm text-green-50">Fast</span>
+          </div>
+          <div className="flex flex-col items-center space-y-2">
+            <TrendingUp className="w-8 h-8 text-white" />
+            <span className="text-sm text-green-50">Grow</span>
+          </div>
+        </div>
 
-        {isLoading && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            className="flex justify-center"
+        {/* CTA Button */}
+        <div className="animate-in slide-in-from-bottom-6 duration-1200">
+          <Button
+            onClick={() => router.push("/onboarding")}
+            className="w-full bg-white text-green-600 hover:bg-green-50 font-semibold py-6 text-lg shadow-xl"
+            size="lg"
           >
-            <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-          </motion.div>
-        )}
+            Get Started
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+        </div>
+
+        {/* Footer */}
+        <p className="text-sm text-green-100 animate-in fade-in duration-1500">
+          Designed for Sierra Leone 🇸🇱
+          <br />
+          <span className="text-xs">By Eager Beaver</span>
+        </p>
       </div>
     </div>
   )

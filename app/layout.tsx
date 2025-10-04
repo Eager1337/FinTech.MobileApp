@@ -6,21 +6,19 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "FinTech - Empowering Sierra Leone, Digitally",
-  description: "Your digital wallet for Sierra Leone. Send money, pay bills, and manage your finances with ease.",
-    generator: 'v0.dev'
+  title: "FinTech - Mobile Banking for Sierra Leone",
+  description: "Modern mobile banking application designed for Sierra Leone",
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="max-w-md mx-auto bg-white dark:bg-slate-900 min-h-screen">{children}</div>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }
