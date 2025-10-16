@@ -1,4 +1,5 @@
 # FinTech Mobile App – UI Prototype
+https://fintechbeaver.vercel.app/
 
 This is a mobile banking app UI designed for Sierra Leone’s FinTech sector. Built using Figma, this prototype allows users to send money, manage wallets, and track investments.
 
@@ -32,5 +33,6 @@ This is a mobile banking app UI designed for Sierra Leone’s FinTech sector. Bu
 
 - [Alusine G Dumbuya]
 - [Salome Koroma, Sombo Kayaat, Emmanuel Bendu]
+
 
 ## 🎓 For: Limkokwing University – Faculty of ICT
