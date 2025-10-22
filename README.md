@@ -1,3 +1,4 @@
+# Alusine G Dumbuya Sem3 1102
 # FinTech Mobile App – UI Prototype
 https://fintechbeaver.vercel.app/
 
@@ -36,3 +37,4 @@ This is a mobile banking app UI designed for Sierra Leone’s FinTech sector. Bu
 
 
 ## 🎓 For: Limkokwing University – Faculty of ICT
+
