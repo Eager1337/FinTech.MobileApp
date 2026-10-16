@@ -9,6 +9,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@capacitor/android": "^6.2.1",
+    "@capacitor/core": "^6.2.1",
     "@emotion/is-prop-valid": "latest",
     "@radix-ui/react-avatar": "latest",
     "@radix-ui/react-checkbox": "latest",
@@ -29,6 +31,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@capacitor/cli": "^6.2.1",
     "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",
