@@ -1,0 +1,64 @@
+name: Android debug APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - fintech-real-money-foundation
+    paths:
+      - "capacitor.config.ts"
+      - ".github/workflows/android-debug-apk.yml"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "public/index.html"
+
+permissions:
+  contents: read
+
+jobs:
+  build-debug-apk:
+    name: Build Android debug APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - name: Install project dependencies including Capacitor
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Generate Android project
+        run: pnpm exec cap add android
+
+      - name: Synchronize Android project
+        run: pnpm exec cap sync android
+
+      - name: Build debug APK
+        working-directory: android
+        run: ./gradlew --no-daemon assembleDebug
+
+      - name: Upload APK for testing
+        uses: actions/upload-artifact@v4
+        with:
+          name: fintech-sierra-leone-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 14
