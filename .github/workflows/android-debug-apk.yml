@@ -42,17 +42,14 @@ jobs:
           distribution: "temurin"
           java-version: "17"
 
-      - name: Install web project dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Install Capacitor build tooling
-        run: npm install --no-save --package-lock=false @capacitor/core@6 @capacitor/cli@6 @capacitor/android@6
+      - name: Install project dependencies including Capacitor
+        run: pnpm install --no-frozen-lockfile
 
       - name: Generate Android project
-        run: npx cap add android
+        run: pnpm exec cap add android
 
       - name: Synchronize Android project
-        run: npx cap sync android
+        run: pnpm exec cap sync android
 
       - name: Build debug APK
         working-directory: android
